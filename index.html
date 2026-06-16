@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3f8f46" />
+    <title>Tani Tap</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Clicker Kebun WAP</p>
+          <h1>🌱 Tani Tap</h1>
+        </div>
+        <button id="resetBtn" class="ghost-btn" type="button">Reset</button>
+      </header>
+
+      <section class="stats-grid" aria-label="Stat pemain">
+        <article class="stat-card"><span>🪙</span><strong id="coinsText">0</strong><small>Koin</small></article>
+        <article class="stat-card"><span>⭐</span><strong id="repText">0</strong><small>Reputasi</small></article>
+        <article class="stat-card"><span>🌾</span><strong id="harvestText">0</strong><small>Panen</small></article>
+      </section>
+
+      <section class="panel hero-panel">
+        <div>
+          <p class="eyebrow">Target awal</p>
+          <h2 id="tipTitle">Garap tanah pertama</h2>
+          <p id="tipText">Klik kotak tanah untuk digarap, lalu tanam Bayam.</p>
+        </div>
+        <div class="quick-actions">
+          <button id="sellAllBtn" class="primary-btn" type="button">Jual Semua</button>
+          <button id="saveBtn" class="secondary-btn" type="button">Simpan</button>
+        </div>
+      </section>
+
+      <main class="layout">
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Kebun 2×4</p>
+              <h2>Lahan</h2>
+            </div>
+            <span id="plotsText" class="badge">4 / 8 aktif</span>
+          </div>
+          <div id="farmGrid" class="farm-grid" aria-live="polite"></div>
+        </section>
+
+        <aside class="side-stack">
+          <section class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Inventory</p>
+                <h2>Gudang</h2>
+              </div>
+            </div>
+            <div id="inventoryList" class="list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Toko</p>
+                <h2>Belanja</h2>
+              </div>
+            </div>
+            <div class="tabs" role="tablist" aria-label="Toko">
+              <button class="tab active" data-shop="seeds" type="button">Benih</button>
+              <button class="tab" data-shop="tools" type="button">Alat</button>
+              <button class="tab" data-shop="fertilizers" type="button">Pupuk</button>
+              <button class="tab" data-shop="land" type="button">Lahan</button>
+            </div>
+            <div id="shopList" class="shop-list"></div>
+          </section>
+        </aside>
+      </main>
+
+      <section class="panel log-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Aktivitas</p>
+            <h2>Log Kebun</h2>
+          </div>
+        </div>
+        <div id="logList" class="log-list"></div>
+      </section>
+    </div>
+
+    <template id="plotTemplate">
+      <button class="plot" type="button">
+        <span class="plot-emoji"></span>
+        <strong class="plot-title"></strong>
+        <small class="plot-status"></small>
+        <span class="progress"><i></i></span>
+      </button>
+    </template>
+
+    <script src="main.js"></script>
+  </body>
+</html>
