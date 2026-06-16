@@ -100,6 +100,7 @@ h2 { font-size: 1.25rem; }
 .log-item { padding: 9px 10px; border-left: 4px solid var(--green); background: rgba(255,255,255,.58); border-radius: 12px; }
 @media (max-width: 860px) {
   .layout, .hero-panel { flex-direction: column; }
+  .layout > .panel { flex: 0 0 auto; width: 100%; }
   .side-stack { width: 100%; flex-basis: auto; }
 }
 
